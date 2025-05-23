@@ -6,6 +6,7 @@ import * as useIngredientsHook from "../hooks/useIngredients";
 const mockUseIngredients = {
     dish: "Pizza",
     setDish: vi.fn(),
+    dishName: "Pizza",
     ingredients: [
         { name: "Cheese", isCustom: false },
         { name: "Tomato Sauce", isCustom: false },

@@ -3,6 +3,7 @@ import type { Ingredient } from "../types";
 
 export function useIngredients() {
     const [dish, setDish] = useState("");
+    const [dishName, setDishName] = useState("");
     const [ingredients, setIngredients] = useState<Ingredient[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
@@ -23,6 +24,7 @@ export function useIngredients() {
                 setIngredients([]);
             } else {
                 const meal = data.meals[0];
+                setDishName(meal.strMeal);
                 const ingr: Ingredient[] = [];
                 for (let i = 1; i <= 20; i++) {
                     const ing = meal[`strIngredient${i}`];
@@ -56,6 +58,7 @@ export function useIngredients() {
     return {
         dish,
         setDish,
+        dishName,
         ingredients,
         loading,
         error,

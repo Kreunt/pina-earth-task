@@ -6,6 +6,7 @@ const RecipeIngredients: React.FC = () => {
     const {
         dish,
         setDish,
+        dishName,
         ingredients,
         loading,
         error,
@@ -46,6 +47,9 @@ const RecipeIngredients: React.FC = () => {
             {ingredients.length > 0 && (
                 <>
                     <ul style={{ listStyle: "none", padding: 0 }}>
+                        <li style={{ marginBottom: 8 }}>
+                            <strong>{dishName}:</strong>
+                        </li>
                         {ingredients.map((ing, idx) => (
                             <IngredientLine
                                 key={idx}
